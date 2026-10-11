@@ -30,6 +30,8 @@ Dieser Download gilt für WotLK. Ein aktuelles TrinityCore-Profil benötigt weit
 
 **Upgrade** rechts oben lädt neue stabile Versionen öffentlich von diesem Repository und prüft das Paket vor der Installation. Der Client startet danach neu. Einladungen, Spielpfade und Modstände bleiben erhalten. Ausgaben ohne Upgrade-Button einmal manuell durch das vollständige ZIP ersetzen.
 
+Ab **0.12.2** kann pro Installationsordner nur eine Client-Oberfläche starten. Vor einem Upgrade zusätzliche ältere Client-Fenster schließen. Das Upgrade erkennt offene Kopien und erklärt die Dateisperre; kurze Sperren werden abgewartet. Gespeicherte Einladungen und Spielpfade bleiben erhalten.
+
 ## Grenzen
 
 Die Mod-Synchronisierung gilt für im Manager unterstützte und ausdrücklich freigegebene Client-Dateien. Manche Spiele nutzen ihren eigenen Workshop-Download, andere benötigen manuelle Loader oder Mods. Steam-Spiele werden weiterhin über Steam installiert. UGSM ersetzt keinen erforderlichen TrinityCore-Launcher. Die Erkennung von Bellwright oder LS25 bedeutet keine neue Serverintegration. Details stehen in `Anleitung.txt` im Paket.
