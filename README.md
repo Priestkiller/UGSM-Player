@@ -28,7 +28,9 @@ Dieser Download gilt für WotLK. Ein aktuelles TrinityCore-Profil benötigt weit
 
 ## Upgrades
 
-**Upgrade** rechts oben lädt neue stabile Versionen öffentlich von diesem Repository und prüft das Paket vor der Installation. Der Client startet danach neu. Einladungen, Spielpfade und Modstände bleiben erhalten. Ausgaben ohne Upgrade-Button einmal manuell durch das vollständige ZIP ersetzen.
+Ab **0.13.0** kann **Upgrade** direkt vom eigenen UGSM-Manager herunterladen. Bei vorhandener Einladung steht der Betreiber als Downloadquelle zur Auswahl. Der Manager benötigt ebenfalls mindestens 0.13.0 und das enthaltene signierte Clientpaket. Herausgebersignatur, Serverzertifikat, Paket-Prüfsumme, einzelne Dateien und Version werden geprüft. GitHub bleibt eine ausdrücklich wählbare Ersatzquelle. Der Client startet nach dem Upgrade neu; Einladungen, Spielpfade und Modstände bleiben erhalten.
+
+Für die **Erstinstallation ohne GitHub** kann der Betreiber im Manager unter **Spielerclient → Eigene Downloads → Clientpaket für Freunde speichern** das vollständige ZIP exportieren und weitergeben. Freigegebene Mods/Addons werden direkt vom Betreiber synchronisiert. Dieser eigene Downloadbereich enthält UGSM und freigegebene Mods/Addons, keine vollständigen kommerziellen Spiele.
 
 Ab **0.12.2** kann pro Installationsordner nur eine Client-Oberfläche starten. Vor einem Upgrade zusätzliche ältere Client-Fenster schließen. Das Upgrade erkennt offene Kopien und erklärt die Dateisperre; kurze Sperren werden abgewartet. Gespeicherte Einladungen und Spielpfade bleiben erhalten.
 
