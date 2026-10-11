@@ -7,14 +7,14 @@ Natives Windows-x64-Programm für deine Spielrunde: freigegebene Server sehen, M
 ## Starten
 
 1. Unter **Releases** das `UGSM-Player-…-Windows-x64.zip` herunterladen und vollständig in einen eigenen beschreibbaren Ordner entpacken. Die automatisch erzeugten Source-code-Archive sind kein fertiger Client.
-2. **UGSM.Player.exe** starten. Einmal die `.ugsm-directory`-Betreiber-Einladung öffnen. Alle aktuellen und künftig veröffentlichten Spielerprofile dieses Betreibers erscheinen automatisch. Einzelne `.ugsm-server`-Einladungen bleiben nutzbar.
+2. **UGSM.Player.exe** starten. **Einladungscode eingeben** wählen und den vom Betreiber erhaltenen `UGSM1:`-Code einfügen. Alternativ eine `.ugsm-directory`-Einladungsdatei öffnen. Alle aktuellen und künftig veröffentlichten Spielerprofile dieses Betreibers erscheinen automatisch. Einzelne `.ugsm-server`-Einladungen bleiben nutzbar.
 3. **Einrichtung & Mods** wählen. **Installiertes Spiel suchen** erkennt passende Steam-Bibliotheken und WoW-Builds. Eine Installation ausdrücklich übernehmen; abweichende Store-/Launcher-Installationen manuell auswählen.
 4. Spielversion, Loader und manuelle Mods vorbereiten. Nur einem bekannten Serverbetreiber und dessen Modcode vertrauen.
 5. Beim laufenden Server auf **Spielen** klicken. Der Client prüft das Profil, synchronisiert freigegebene Mods und startet das Spiel. Der eigentliche Beitritt erfolgt über die Spieloberfläche.
 
 ## Serverstatus und Spielsuche
 
-Die Liste aktualisiert sich alle 15 Sekunden. Online/Erreichbar stammen aus dem Manager; eine fehlende Verbindung wird ausdrücklich als unbekannt angezeigt. Dafür benötigt der Betreiber **UGSM Manager 0.11.0** und den erreichbaren HTTPS-Spielerdienst. Dies ist kein automatischer Nachweis eines externen Spielbeitritts.
+Die Liste aktualisiert sich alle 15 Sekunden. Online/Erreichbar stammen aus dem Manager; eine fehlende Verbindung wird ausdrücklich als unbekannt angezeigt. Dafür benötigt der Betreiber **UGSM Manager ab 0.11.0** und den erreichbaren HTTPS-Spielerdienst. Manager 0.12.0 kann die Playit-Tunnel und den gemeinsamen Spielerzugang direkt einrichten. Dies ist kein automatischer Nachweis eines externen Spielbeitritts.
 
 Die Steam-Erkennung unterstützt Enshrouded, ARK SE/ASA, Abiotic Factor, 7 Days to Die, Conan Exiles, Valheim, V Rising, Soulmask, Project Zomboid, Bellwright und LS25. Bei WoW werden nur zum Profil passende Builds vorgeschlagen. Der klassische Minecraft-Launcher wird an üblichen Installationsorten erkannt; die Fabric-Instanz bleibt separat auszuwählen. Es erfolgt keine vollständige Festplattensuche. Vorhandene Pfade werden bei Listenaktualisierungen erhalten.
 
@@ -26,4 +26,4 @@ Die Steam-Erkennung unterstützt Enshrouded, ARK SE/ASA, Abiotic Factor, 7 Days 
 
 Die Mod-Synchronisierung gilt für im Manager unterstützte und ausdrücklich freigegebene Client-Dateien. Manche Spiele nutzen ihren eigenen Workshop-Download, andere benötigen manuelle Loader oder Mods. UGSM installiert keine gekauften Spiele, liefert keine WoW-Spieldaten und ersetzt keinen erforderlichen TrinityCore-Launcher. Die Erkennung von Bellwright oder LS25 bedeutet keine neue Serverintegration. Details stehen in `Anleitung.txt` im Paket.
 
-Dieses öffentliche Repository enthält ausschließlich Client-Downloads und Anleitung. Der Manager bleibt separat privat. Einladungen enthalten private Download-Zugänge: bitte nicht in Issues hochladen. Drittanbieterhinweise liegen jedem Paket bei.
+Dieses öffentliche Repository enthält ausschließlich Client-Downloads und Anleitung. Der Manager bleibt separat privat. Einladungen und Einladungscodes enthalten private Download-Zugänge: bitte nicht in Issues hochladen. Drittanbieterhinweise liegen jedem Paket bei.
