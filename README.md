@@ -2,24 +2,28 @@
 
 [**Spielerclient für Windows herunterladen**](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
-Natives Windows-x64-Programm für Servereinladungen, den Abgleich freigegebener Mods und den lokalen Spielstart. Windows 10/11 mit .NET Framework 4.8. Keine Administratorrechte und kein GitHub-Konto nötig.
+Natives Windows-x64-Programm für deine Spielrunde: freigegebene Server sehen, Mods synchronisieren und das lokal installierte Spiel starten. Windows 10/11 mit .NET Framework 4.8. Kein GitHub-Konto und keine Administratorrechte nötig.
 
 ## Starten
 
-1. Bei **Releases** das `UGSM-Player-…-Windows-x64.zip` herunterladen. Die automatisch erzeugten „Source code“-Archive enthalten keinen fertigen Client.
-2. Das ZIP vollständig in einen eigenen beschreibbaren Ordner entpacken, z. B. `Dokumente\UGSM-Spielerclient`.
-3. `UGSM.Player.exe` starten und die `.ugsm-server`-Einladung deines Serverbetreibers öffnen.
-4. Spielordner, Mod-Zielordner und Spiel/Launcher auswählen. Nur einem bekannten Serverbetreiber und dessen Modcode vertrauen.
-5. Passende Spielversion, Modloader und manuelle Voraussetzungen vorbereiten; **Synchronisieren & Spielen** wählen.
+1. Unter **Releases** das `UGSM-Player-…-Windows-x64.zip` herunterladen und vollständig in einen eigenen beschreibbaren Ordner entpacken. Die automatisch erzeugten Source-code-Archive sind kein fertiger Client.
+2. **UGSM.Player.exe** starten. Einmal die `.ugsm-directory`-Betreiber-Einladung öffnen. Alle aktuellen und künftig veröffentlichten Spielerprofile dieses Betreibers erscheinen automatisch. Einzelne `.ugsm-server`-Einladungen bleiben nutzbar.
+3. **Einrichtung & Mods** wählen. **Installiertes Spiel suchen** erkennt passende Steam-Bibliotheken und WoW-Builds. Eine Installation ausdrücklich übernehmen; abweichende Store-/Launcher-Installationen manuell auswählen.
+4. Spielversion, Loader und manuelle Mods vorbereiten. Nur einem bekannten Serverbetreiber und dessen Modcode vertrauen.
+5. Beim laufenden Server auf **Spielen** klicken. Der Client prüft das Profil, synchronisiert freigegebene Mods und startet das Spiel. Der eigentliche Beitritt erfolgt über die Spieloberfläche.
+
+## Serverstatus und Spielsuche
+
+Die Liste aktualisiert sich alle 15 Sekunden. Online/Erreichbar stammen aus dem Manager; eine fehlende Verbindung wird ausdrücklich als unbekannt angezeigt. Dafür benötigt der Betreiber **UGSM Manager 0.11.0** und den erreichbaren HTTPS-Spielerdienst. Dies ist kein automatischer Nachweis eines externen Spielbeitritts.
+
+Die Steam-Erkennung unterstützt Enshrouded, ARK SE/ASA, Abiotic Factor, 7 Days to Die, Conan Exiles, Valheim, V Rising, Soulmask, Project Zomboid, Bellwright und LS25. Bei WoW werden nur zum Profil passende Builds vorgeschlagen. Der klassische Minecraft-Launcher wird an üblichen Installationsorten erkannt; die Fabric-Instanz bleibt separat auszuwählen. Es erfolgt keine vollständige Festplattensuche. Vorhandene Pfade werden bei Listenaktualisierungen erhalten.
 
 ## Upgrades
 
-Ab 0.10.0 befindet sich **Upgrade** rechts oben. Darüber werden neue stabile Versionen öffentlich von diesem Repository geladen und vor der Installation geprüft. Der Client startet danach neu; gespeicherte Serverprofile, Spiele und Mods bleiben erhalten. Versionen ohne Upgrade-Button einmal manuell durch das vollständige neue ZIP ersetzen.
+**Upgrade** rechts oben lädt neue stabile Versionen öffentlich von diesem Repository und prüft das Paket vor der Installation. Der Client startet danach neu. Einladungen, Spielpfade und Modstände bleiben erhalten. Ausgaben ohne Upgrade-Button einmal manuell durch das vollständige ZIP ersetzen.
 
-Der Serverbetreiber benötigt weiterhin den separat verwalteten UGSM-Manager. Dieses öffentliche Repository enthält ausschließlich Client-Downloads und Anleitung, keine Serverdaten oder Einladungen.
+## Grenzen
 
-## Spielabhängige Grenzen
+Die Mod-Synchronisierung gilt für im Manager unterstützte und ausdrücklich freigegebene Client-Dateien. Manche Spiele nutzen ihren eigenen Workshop-Download, andere benötigen manuelle Loader oder Mods. UGSM installiert keine gekauften Spiele, liefert keine WoW-Spieldaten und ersetzt keinen erforderlichen TrinityCore-Launcher. Die Erkennung von Bellwright oder LS25 bedeutet keine neue Serverintegration. Details stehen in `Anleitung.txt` im Paket.
 
-Die automatische Synchronisierung gilt für im Manager unterstützte und ausdrücklich freigegebene Client-Moddateien. Manche Spiele nutzen ihren eigenen Workshop-Download; andere benötigen manuell installierte Loader oder Mods. UGSM installiert keine gekauften Spiele, liefert keine WoW-Spieldaten und ersetzt keinen erforderlichen TrinityCore-Launcher. Der eigentliche Beitritt erfolgt über die Spieloberfläche. Einzelheiten stehen in `Anleitung.txt` im Download.
-
-Einladungen enthalten private Download-Zugänge. Bitte nicht in Issues hochladen. Drittanbieterhinweise liegen jedem Paket bei.
+Dieses öffentliche Repository enthält ausschließlich Client-Downloads und Anleitung. Der Manager bleibt separat privat. Einladungen enthalten private Download-Zugänge: bitte nicht in Issues hochladen. Drittanbieterhinweise liegen jedem Paket bei.
