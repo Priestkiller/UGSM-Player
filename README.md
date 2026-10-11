@@ -18,12 +18,20 @@ Die Liste aktualisiert sich alle 15 Sekunden. Online/Erreichbar stammen aus dem 
 
 Die Steam-Erkennung unterstützt Enshrouded, ARK SE/ASA, Abiotic Factor, 7 Days to Die, Conan Exiles, Valheim, V Rising, Soulmask, Project Zomboid, Bellwright und LS25. Bei WoW werden nur zum Profil passende Builds vorgeschlagen. Der klassische Minecraft-Launcher wird an üblichen Installationsorten erkannt; die Fabric-Instanz bleibt separat auszuwählen. Es erfolgt keine vollständige Festplattensuche. Vorhandene Pfade werden bei Listenaktualisierungen erhalten.
 
+## WoW direkt herunterladen
+
+Ab Spielerclient **0.12.1** gibt es rechts oben und auf WotLK-Serverkarten **WoW herunterladen**. Zielordner wählen und den Download starten. UGSM lädt **WoW 3.3.5a, Build 12340** direkt aus der [ChromieCraft-Communityquelle](https://chromiecraft.com/en/downloads/), prüft die Downloadteile und entpackt den Client in einen neuen Spielordner. Download: 17,7 GB; bis zu 60 GiB freier Speicher für Archiv und Entpacken.
+
+Abbruch und Fortsetzen sind möglich: danach denselben Zielordner wählen. Bei einem ausgewählten WotLK-Profil werden Spielordner und Wow.exe übernommen; ansonsten findet **Installiertes Spiel suchen** die Installation. Beim Spielen übernimmt UGSM die veröffentlichte WotLK-Loginadresse und sichert die ursprüngliche realmlist.wtf. Ein privater Serveraccount und eine erreichbare Serverinstanz bleiben erforderlich. Ein erfolgreich heruntergeladener Client bestätigt noch keinen Spielbeitritt.
+
+Dieser Download gilt für WotLK. Ein aktuelles TrinityCore-Profil benötigt weiterhin die passende WoW-Version und einen kompatiblen Launcher. Der Download hängt von der Erreichbarkeit der Communityquelle ab. Das UGSM-Paket enthält keine WoW-Spieldateien.
+
 ## Upgrades
 
 **Upgrade** rechts oben lädt neue stabile Versionen öffentlich von diesem Repository und prüft das Paket vor der Installation. Der Client startet danach neu. Einladungen, Spielpfade und Modstände bleiben erhalten. Ausgaben ohne Upgrade-Button einmal manuell durch das vollständige ZIP ersetzen.
 
 ## Grenzen
 
-Die Mod-Synchronisierung gilt für im Manager unterstützte und ausdrücklich freigegebene Client-Dateien. Manche Spiele nutzen ihren eigenen Workshop-Download, andere benötigen manuelle Loader oder Mods. UGSM installiert keine gekauften Spiele, liefert keine WoW-Spieldaten und ersetzt keinen erforderlichen TrinityCore-Launcher. Die Erkennung von Bellwright oder LS25 bedeutet keine neue Serverintegration. Details stehen in `Anleitung.txt` im Paket.
+Die Mod-Synchronisierung gilt für im Manager unterstützte und ausdrücklich freigegebene Client-Dateien. Manche Spiele nutzen ihren eigenen Workshop-Download, andere benötigen manuelle Loader oder Mods. Steam-Spiele werden weiterhin über Steam installiert. UGSM ersetzt keinen erforderlichen TrinityCore-Launcher. Die Erkennung von Bellwright oder LS25 bedeutet keine neue Serverintegration. Details stehen in `Anleitung.txt` im Paket.
 
 Dieses öffentliche Repository enthält ausschließlich Client-Downloads und Anleitung. Der Manager bleibt separat privat. Einladungen und Einladungscodes enthalten private Download-Zugänge: bitte nicht in Issues hochladen. Drittanbieterhinweise liegen jedem Paket bei.
