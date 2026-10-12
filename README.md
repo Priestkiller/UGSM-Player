@@ -41,6 +41,8 @@ TrinityCore benötigt **12.1.0.69933** und eine kompatible lokale Startkomponent
 
 Das UGSM-Paket enthält keine WoW-Spieldateien. Vollständige kommerzielle Spiele werden nicht über den eigenen UGSM-Downloadbereich verteilt. Steam-Spiele werden weiterhin über Steam installiert.
 
+Der erste Start ohne bisherigen Scan wird in 0.16.1 korrekt angezeigt; ein fehlender Scan-Zeitstempel führt zu keinem Objektverweisfehler mehr.
+
 ## Upgrades und gespeicherte Daten
 
 **Einstellungen → Client-Upgrade** öffnet die Updateprüfung. Bei vorhandener Einladung steht dein Betreiber als Quelle zur Auswahl; **GitHub · öffentliches UGSM-Release** liefert das aktuelle öffentliche Release. Ein älterer Manager kann noch sein früheres Clientpaket anbieten. Einladungen, Spielpfade und Modstände bleiben beim Upgrade erhalten.
