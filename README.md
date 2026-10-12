@@ -6,7 +6,7 @@ Natives Windows-x64-Programm für deine Spielrunde: Server auswählen, lokale Sp
 
 ## Neu in 0.16.1
 
-**Manager verbinden** steht dauerhaft oben im Spielerclient. Die **Manager-Nummer (UGSM2-…)** wird einmal eingegeben und lädt alle freigegebenen Server. Sie steht im Manager ab 0.15.3 direkt im Hauptfenster mit Kopierbutton und Dateiexport. Erneutes Verbinden erhält lokale Spielordner. Einstellungskarten sind je Zeile gleich hoch, bei kleinen Fenstern in zwei Spalten.
+**Manager verbinden** steht dauerhaft oben im Spielerclient. Die **Manager-Nummer (UGSM2-…)** wird einmal eingegeben und lädt alle freigegebenen Server. Sie steht im Manager ab 0.15.3 direkt im Hauptfenster mit Kopierbutton und Dateiexport. Erneutes Verbinden erhält lokale Spielordner. Einstellungskarten sind je Zeile gleich hoch, bei kleinen Fenstern in zwei Spalten. WotLK und Retail haben unterschiedliche, scharf skalierte native UGSM-Symbole; quadratische Spielicons werden proportional vollständig angezeigt.
 
 Die Oberfläche folgt den Spielerclient-Referenzen: dunkles Fantasy-Motiv, Cyan und Violett, Spielbilder, Serverkarten und sechs Bereiche: **Übersicht**, **Spiele & Server**, **Lokale Erkennung**, **Serverprofile**, **Mods & Synchronisation**, **Einstellungen**.
 
