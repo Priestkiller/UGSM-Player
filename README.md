@@ -24,6 +24,8 @@ Ab Spielerclient **0.12.1** gibt es rechts oben und auf WotLK-Serverkarten **WoW
 
 Abbruch und Fortsetzen sind möglich: danach denselben Zielordner wählen. Bei einem ausgewählten WotLK-Profil werden Spielordner und Wow.exe übernommen; ansonsten findet **Installiertes Spiel suchen** die Installation. Beim Spielen übernimmt UGSM die veröffentlichte WotLK-Loginadresse und sichert die ursprüngliche realmlist.wtf. Ein privater Serveraccount und eine erreichbare Serverinstanz bleiben erforderlich. Ein erfolgreich heruntergeladener Client bestätigt noch keinen Spielbeitritt.
 
+Ab **0.15.0** setzt unser Spielerclient für TrinityCore **12.1.0.69933** die Portaladresse aus der Einladung in `_retail_/WTF/Config.wtf` und sichert die ursprüngliche Konfiguration. Anschließend startet er die vom Spieler gewählte kompatible lokale Startkomponente. Der Manager benötigt ein passendes veröffentlichtes Spielerprofil. Diese Vorbereitung bestätigt noch keinen WoW-Login oder Spielbeitritt.
+
 Dieser Download gilt für WotLK. Ein aktuelles TrinityCore-Profil benötigt weiterhin die passende WoW-Version und einen kompatiblen Launcher. Der Download hängt von der Erreichbarkeit der Communityquelle ab. Das UGSM-Paket enthält keine WoW-Spieldateien.
 
 ## Upgrades
