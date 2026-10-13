@@ -4,7 +4,13 @@
 
 Natives Windows-x64-Programm für deine Spielrunde: Server auswählen, lokale Spiele finden, freigegebene Mods synchronisieren und das Spiel starten. Windows 10/11 mit .NET Framework 4.8. Kein GitHub-Konto und keine Administratorrechte nötig.
 
-## Neu in 0.16.1
+## Neu in 0.16.2
+
+Die sechs Reiter haben getrennte Aufgaben: **Übersicht** zeigt den ausgewählten Server, den nächsten Schritt und zuletzt gespielte Server. **Spiele & Server** dient der Serverauswahl mit Suche, Filtern und Favoriten. **Lokale Erkennung** enthält den Scan und die vollständige Liste gefundener Spiele. **Serverprofile** verwaltet Spielordner, Startprogramm, Mod-Ziel und Vertrauen. **Mods & Synchronisation** zeigt Dateivergleiche, Fortschritt und die aufklappbare Verbindungsanleitung. **Einstellungen** verwaltet den Client und Manager-Verbindungen.
+
+Es gibt nur einen festen „Synchronisieren & Spielen“-Button je Spielansicht. Überbreite Hilfsbuttons, doppelte Einrichtungsformulare und der zusätzliche Werbetext im Kopfbereich wurden entfernt. Beim Wechsel des Reiters beginnt die Seite oben. Die Darstellung wurde bei 1020, 1440 und 1672 Pixeln Breite geprüft.
+
+## Manager-Verbindung und Spielsuche
 
 **Manager verbinden** steht dauerhaft oben im Spielerclient. Die **Manager-Nummer (UGSM2-…)** wird einmal eingegeben und lädt alle freigegebenen Server. Sie steht im Manager ab 0.15.3 direkt im Hauptfenster mit Kopierbutton und Dateiexport. Erneutes Verbinden erhält lokale Spielordner. Einstellungskarten sind je Zeile gleich hoch, bei kleinen Fenstern in zwei Spalten. WotLK und Retail haben unterschiedliche, scharf skalierte native UGSM-Symbole; quadratische Spielicons werden proportional vollständig angezeigt.
 
@@ -16,10 +22,10 @@ Eine eindeutig passende Installation wird automatisch einem noch leeren Serverpr
 
 ## Starten
 
-1. Das **UGSM-Player-0.16.1-Windows-x64.zip** unter Releases herunterladen und vollständig in einen eigenen beschreibbaren Ordner entpacken. Die Source-code-Archive sind kein fertiger Client.
+1. Das **UGSM-Player-0.16.2-Windows-x64.zip** unter Releases herunterladen und vollständig in einen eigenen beschreibbaren Ordner entpacken. Die Source-code-Archive sind kein fertiger Client.
 2. **UGSM.Player.exe** starten und die Spielsuche erlauben oder ablehnen.
-3. Oben **Manager verbinden** wählen und einmal die **Manager-Nummer (UGSM2-…)** deines Betreibers einfügen. Alternativ seine .ugsm-manager-Datei über „Einladung öffnen“ auswählen. Alle freigegebenen Server erscheinen automatisch. Alte UGSM1:-Codes und .ugsm-directory/.ugsm-server-Dateien bleiben nutzbar.
-4. Server auswählen. Eine erkannte Installation verwenden oder unter **Mods & Synchronisation → Spiel einrichten** Spielordner, Mod-Ziel und Startprogramm auswählen.
+3. Oben **Manager verbinden** wählen und einmal die **Manager-Nummer (UGSM2-…)** deines Betreibers einfügen. Alternativ seine .ugsm-manager-Datei über **Einstellungen → Manager-Verbindungen → Vorhandene Einladungen importieren** auswählen. Alle freigegebenen Server erscheinen automatisch. Alte UGSM1:-Codes und .ugsm-directory/.ugsm-server-Dateien bleiben nutzbar.
+4. Server auswählen. Eine erkannte Installation verwenden oder unter **Serverprofile → Lokale Einrichtung** Spielordner, Mod-Ziel und Startprogramm auswählen.
 5. **Profil prüfen**, einem bekannten Server und dessen Modcode ausdrücklich vertrauen und die passende Spielversion, Loader und manuellen Mods bestätigen.
 6. **Synchronisieren & Spielen**: UGSM prüft und synchronisiert freigegebene Dateien und startet das lokal gewählte Spiel. Der eigentliche Beitritt erfolgt im Spiel.
 
