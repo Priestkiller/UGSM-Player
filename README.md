@@ -1,24 +1,27 @@
-# UGSM-Spielerclient 0.16.7
+# UGSM-Spielerclient 0.16.8
 
-Enshrouded-Pakete aus **Mod Studio0.4.22** über **Manager0.15.22** automatisch
-prüfen, herunterladen, installieren und gemeinsam mit normalen Mods
-wiederherstellen. Der Spielerclient benötigt dafür weder Node.js noch das
-Mod Studio. Vor dem Spielstart werden Build, Revision und Dateien geprüft.
+Die Enshrouded-Einrichtung ist einfacher: Im **Manager 0.15.23** einmal
+**Automatisch verbinden** wählen. Ein vorhandenes **Mod Studio 0.4.22**
+und dessen Paketpfade werden übernommen. Nur bei fehlender oder mehrdeutiger
+Installation ist eine einmalige Auswahl nötig. Die erweiterten Pfade bleiben
+für eigene Einstellungen aufklappbar.
 
-Im Manager einmal Studio-Daten, passende getrennte Clientbasis und Paketablage
-verbinden. Im Spielerclient **Enshrouded → Mods & Synchronisation → Mods prüfen**
-verwenden; anschließend **Mods aktualisieren** oder **Synchronisieren & Spielen**.
-Profile, Spielordner und Einstellungen bleiben erhalten. Arbeitsordner und
-Cache sind einstellbar. Der Start mit wiederhergestellter WoW-Ansicht ist korrigiert.
+Im Mod Studio die Änderungen anwenden; danach im Spielerclient
+**Enshrouded → Mods & Synchronisation → Synchronisieren & Spielen** wählen.
+Vorhandene oder eindeutig erkannte Spielordner werden genutzt. Neue Arbeits-
+und Cachepfade werden automatisch gewählt; eigene Pfade und vorhandene
+Sicherungsorte bleiben erhalten. Der Spieler-PC benötigt weder Node.js noch
+Mod Studio. Der Betreiber benötigt zur Paketerstellung weiterhin eine
+separate normale Clientbasis.
 
-[Downloads und Releasehinweise](https://github.com/Priestkiller/UGSM-Player/releases).
-Das vollständige ZIP entpacken und `UGSM.Player.exe` ohne Administratorrechte
-starten. Bestehende Nutzer können nach der Veröffentlichung das Client-Upgrade
-über GitHub oder den aktualisierten Manager verwenden.
+[Downloads und Releasehinweise](https://github.com/Priestkiller/UGSM-Player/releases/tag/v0.16.8).
+Das vollständige Windows-x64-ZIP entpacken und `UGSM.Player.exe` ohne
+Administratorrechte starten. Das Client-Upgrade ist über GitHub oder den
+aktualisierten Manager verfügbar.
 
-Dateiinstallation bestätigt die ausgelieferten Dateien. Multiplayer-Spielwirkung,
-zusätzliche Fähigkeitspunkte nur serverseitig und Lagerzugriffe aus normalen
-Kisten/Werkbänken sind damit weiterhin nicht nachgewiesen.
+Die Datei- und Wiederherstellungsprüfungen belegen keine tatsächliche
+Multiplayer-Spielwirkung. Echte Studio-/Dienstkonto-Einrichtung und
+Multiplayer-Spieltests bleiben offen.
 
 ## Bisherige Dokumentation und Funktionen
 
