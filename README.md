@@ -1,3 +1,27 @@
+# UGSM-Spielerclient 0.16.7
+
+Enshrouded-Pakete aus **Mod Studio0.4.22** über **Manager0.15.22** automatisch
+prüfen, herunterladen, installieren und gemeinsam mit normalen Mods
+wiederherstellen. Der Spielerclient benötigt dafür weder Node.js noch das
+Mod Studio. Vor dem Spielstart werden Build, Revision und Dateien geprüft.
+
+Im Manager einmal Studio-Daten, passende getrennte Clientbasis und Paketablage
+verbinden. Im Spielerclient **Enshrouded → Mods & Synchronisation → Mods prüfen**
+verwenden; anschließend **Mods aktualisieren** oder **Synchronisieren & Spielen**.
+Profile, Spielordner und Einstellungen bleiben erhalten. Arbeitsordner und
+Cache sind einstellbar. Der Start mit wiederhergestellter WoW-Ansicht ist korrigiert.
+
+[Downloads und Releasehinweise](https://github.com/Priestkiller/UGSM-Player/releases).
+Das vollständige ZIP entpacken und `UGSM.Player.exe` ohne Administratorrechte
+starten. Bestehende Nutzer können nach der Veröffentlichung das Client-Upgrade
+über GitHub oder den aktualisierten Manager verwenden.
+
+Dateiinstallation bestätigt die ausgelieferten Dateien. Multiplayer-Spielwirkung,
+zusätzliche Fähigkeitspunkte nur serverseitig und Lagerzugriffe aus normalen
+Kisten/Werkbänken sind damit weiterhin nicht nachgewiesen.
+
+## Bisherige Dokumentation und Funktionen
+
 # UGSM Spielerclient
 
 [**Spielerclient für Windows herunterladen**](https://github.com/Priestkiller/UGSM-Player/releases/latest)
@@ -22,11 +46,11 @@ Eine eindeutig passende Installation wird automatisch einem noch leeren Serverpr
 
 ## Starten
 
-1. Das **UGSM-Player-0.16.2-Windows-x64.zip** unter Releases herunterladen und vollständig in einen eigenen beschreibbaren Ordner entpacken. Die Source-code-Archive sind kein fertiger Client.
+1. Das **aktuelle Windows-x64-ZIP** unter Releases herunterladen und vollständig in einen eigenen beschreibbaren Ordner entpacken. Die Source-code-Archive sind kein fertiger Client.
 2. **UGSM.Player.exe** starten und die Spielsuche erlauben oder ablehnen.
 3. Oben **Manager verbinden** wählen und einmal die **Manager-Nummer (UGSM2-…)** deines Betreibers einfügen. Alternativ seine .ugsm-manager-Datei über **Einstellungen → Manager-Verbindungen → Vorhandene Einladungen importieren** auswählen. Alle freigegebenen Server erscheinen automatisch. Alte UGSM1:-Codes und .ugsm-directory/.ugsm-server-Dateien bleiben nutzbar.
 4. Server auswählen. Eine erkannte Installation verwenden oder unter **Serverprofile → Lokale Einrichtung** Spielordner, Mod-Ziel und Startprogramm auswählen.
-5. **Profil prüfen**, einem bekannten Server und dessen Modcode ausdrücklich vertrauen und die passende Spielversion, Loader und manuellen Mods bestätigen.
+5. **Profil prüfen** und einem bekannten Server und dessen Modcode ausdrücklich vertrauen. Bei Profilen mit manuellen Mods oder Loadern die passende Vorbereitung bestätigen; reine Mod-Studio-Pakete werden automatisch geprüft.
 6. **Synchronisieren & Spielen**: UGSM prüft und synchronisiert freigegebene Dateien und startet das lokal gewählte Spiel. Der eigentliche Beitritt erfolgt im Spiel.
 
 ## Spiele, Server und Mods
@@ -60,3 +84,4 @@ Manager-Nummern gelten pro Manager-Dateninstallation und bleiben beim Upgrade er
 Einladungen sind mit deinem Windows-Konto verschlüsselt. Suchergebnisse und Einstellungen liegen lokal im Benutzerprofil. Einladungen und Codes enthalten private Zugänge: bitte nicht in Issues hochladen.
 
 Dieses öffentliche Repository enthält Client-Downloads und Anleitung. Der Manager bleibt privat. Drittanbieterhinweise und ausführliche Anleitung liegen jedem ZIP bei.
+
