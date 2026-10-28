@@ -8,8 +8,8 @@ $specNames=@($spec.PSObject.Properties|ForEach-Object{$_.Name})
 $requiredSpecNames=@('version','parts','sha256','bytes','sourceBuild','sourceWorkflow','sourceCommit')
 if($specNames.Count -ne $requiredSpecNames.Count -or @($requiredSpecNames|Where-Object{$specNames -cnotcontains $_}).Count -ne 0 -or $spec.version -isnot [string] -or $spec.version -cne $version -or $spec.sha256 -isnot [string] -or $spec.sourceBuild -isnot [string] -or $spec.sourceCommit -isnot [string] -or ($spec.bytes -isnot [int] -and $spec.bytes -isnot [long])){throw 'PENDING: an exact approved public client release specification is required.'}
 Assert-PlayerReleaseParts $spec.parts ([long]$spec.bytes) ([string]$spec.sha256)
-\$approvedSourceBuild=''
-$approvedSourceWorkflow=0L
+\$approvedSourceBuild='bcb7f39ce8fe3a6c4dbb880c0f2b705dbcb5d171'
+$approvedSourceWorkflow=40707704813L
 if($approvedSourceWorkflow -lt 1 -or $spec.sourceBuild -cne $approvedSourceBuild -or $spec.sourceCommit -cne $approvedSourceBuild -or ($spec.sourceWorkflow -isnot [int] -and $spec.sourceWorkflow -isnot [long]) -or $spec.sourceWorkflow -ne $approvedSourceWorkflow){throw 'PENDING: the exact approved client CI source and successful workflow run must be pinned first.'}
 if($env:GITHUB_REPOSITORY -cne $repo -or $env:GITHUB_REF -cne 'refs/heads/main' -or $env:GITHUB_SHA -cnotmatch '\A[a-f0-9]{40}\z'){throw 'Wrong public release repository, branch or commit.'}
 if($env:GITHUB_EVENT_NAME -cne 'push' -or -not $env:GITHUB_EVENT_PATH){throw 'An exact public main push release event is required.'}

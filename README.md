@@ -1,6 +1,6 @@
 # UGSM Spielerclient
 
-Freigegebener Spielerclient: **0.16.16**. **Spielerclient 0.16.17** für Manager 0.15.33 und Mod Studio 0.4.30 wird vorbereitet; die Veröffentlichung bleibt bis zur Prüfung des exakten neuen CI-Pakets gesperrt.
+Freigegebener Spielerclient: **0.16.17** für **Manager 0.15.33 und Mod Studio 0.4.30**. Das öffentliche ZIP wird unverändert aus dem vollständig geprüften Manager-Build übernommen.
 
 [Letztaktuelle Windows-Version herunterladen](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
