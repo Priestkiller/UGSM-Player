@@ -1,0 +1,24 @@
+name: Publish approved Player 0.16.17
+on:
+  push:
+    branches: [main]
+    paths: [.github/player-release-0.16.17.json]
+permissions:
+  contents: write
+concurrency:
+  group: player-release-0.16.17
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: "github.repository == 'Priestkiller/UGSM-Player' && github.ref == 'refs/heads/main' && github.event.head_commit.message == 'release: UGSM Player 0.16.17'"
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Verify and publish the exact approved public client package
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./.github/scripts/publish-player-0.16.17.ps1
