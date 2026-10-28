@@ -1,6 +1,6 @@
 # UGSM Spielerclient
 
-Freigegebener Stand: **Spielerclient 0.16.14**, Manager 0.15.29 und Enshrouded Mod Studio 0.4.27. **Spielerclient 0.16.15** für Manager 0.15.30 wird mit getrennten Aktionen für Synchronisieren und Spiel starten vorbereitet; seine Veröffentlichung bleibt bis zur Prüfung des exakten CI-Pakets gesperrt.
+Freigegebener Stand: **Spielerclient 0.16.15**, Manager 0.15.30 und Enshrouded Mod Studio 0.4.27. **Synchronisieren** aktualisiert die Mods; **Spiel starten** ist eine getrennte Aktion.
 
 [Letztaktuelle Windows-Version herunterladen](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
