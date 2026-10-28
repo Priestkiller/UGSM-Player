@@ -1,6 +1,6 @@
 # UGSM Spielerclient
 
-Freigegebener Stand: **Spielerclient 0.16.15**, Manager 0.15.30 und Enshrouded Mod Studio 0.4.27. **Synchronisieren** aktualisiert die Mods; **Spiel starten** ist eine getrennte Aktion.
+Freigegebener Spielerclient: **0.16.15**. **Spielerclient 0.16.16** für Manager 0.15.32 und Mod Studio 0.4.28 wird vorbereitet; die Veröffentlichung bleibt bis zur Prüfung des exakten neuen CI-Pakets gesperrt.
 
 [Letztaktuelle Windows-Version herunterladen](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
@@ -14,4 +14,4 @@ Für die neue serverbasierte Ressourcenübertragung bereitet der Spielerclient d
 
 Der öffentliche GitHub-Updater prüft Größe, GitHub-SHA256, ZIP-Inventar, innere Dateihashes und Programmversion. Updates vom eigenen Server verwenden zusätzlich die bestehende Herausgebersignatur und die eingeladene Serververbindung. Profile, Betreiberzugänge, ursprüngliche Patcher-Runtime und Spielarchive gehören nicht in dieses öffentliche Repository.
 
-Der Publisher für 0.16.15 übernimmt ausschließlich das unveränderte ZIP aus dem freigegebenen CI-Build. Seine geordneten öffentlichen Git-Blob-Teile sind jeweils höchstens 15 MiB groß und enthalten in `.github/player-release-0.16.15.json` genau `blob`, `bytes` und `sha256`. Fehlende Gesamtprüfsumme, Größen-, Teil- oder CI-Pins sperren den Ablauf vor jedem GitHub-Aufruf. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.15` kann veröffentlichen. Der Release bleibt Entwurf, bis ZIP, Prüfsummendatei und Prüfnachweis vollständig hochgeladen und verifiziert sind. Die Dateien früherer Veröffentlichungen bleiben zur Nachvollziehbarkeit erhalten.
+Der Publisher für 0.16.16 übernimmt ausschließlich das unveränderte ZIP aus dem freigegebenen CI-Build. Seine geordneten öffentlichen Git-Blob-Teile sind jeweils höchstens 15 MiB groß und enthalten in `.github/player-release-0.16.16.json` genau `blob`, `bytes` und `sha256`. Fehlende Gesamtprüfsumme, Größen-, Teil- oder CI-Pins sperren den Ablauf vor jedem GitHub-Aufruf. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.16` kann veröffentlichen. Der Release bleibt Entwurf, bis ZIP, Prüfsummendatei und Prüfnachweis vollständig hochgeladen und verifiziert sind. Die Dateien früherer Veröffentlichungen bleiben zur Nachvollziehbarkeit erhalten.
