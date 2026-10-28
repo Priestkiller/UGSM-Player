@@ -1,67 +1,17 @@
 $ErrorActionPreference='Stop'
-function Assert-Player18ArtifactSpec($Spec) {
- $required=@('version','artifact','sha256','bytes','sourceBuild','sourceWorkflow','sourceCommit')
- $names=@($Spec.PSObject.Properties|ForEach-Object{$_.Name})
- if($Spec -isnot [pscustomobject] -or $names.Count -ne $required.Count -or @($required|Where-Object{$names -cnotcontains $_}).Count){throw 'Exact approved Player18 artifact specification required.'}
- if($Spec.version -isnot [string] -or $Spec.version -cne '0.16.18' -or $Spec.sha256 -isnot [string] -or $Spec.sha256 -cne '78bd298ae34a0c424d58c676745fdc78696e9cec5f4ba48e91406404dc5480c3' -or ($Spec.bytes -isnot [int] -and $Spec.bytes -isnot [long]) -or $Spec.bytes -ne 61447931L){throw 'Approved Player18 ZIP hash, size or version differs.'}
- $build='d6695e6f33e840ddb75c3acc284a759cbc232dba'
- if($Spec.sourceBuild -isnot [string] -or $Spec.sourceBuild -cne $build -or $Spec.sourceCommit -isnot [string] -or $Spec.sourceCommit -cne $build -or ($Spec.sourceWorkflow -isnot [int] -and $Spec.sourceWorkflow -isnot [long]) -or $Spec.sourceWorkflow -ne 40742100776L){throw 'Approved private source commit or successful workflow differs.'}
- $artifact=$Spec.artifact;$artifactNames=@($artifact.PSObject.Properties|ForEach-Object{$_.Name})
- if($artifact -isnot [pscustomobject] -or $artifactNames.Count -ne 4 -or @(@('id','bytes','sha256','url')|Where-Object{$artifactNames -cnotcontains $_}).Count -or ($artifact.id -isnot [int] -and $artifact.id -isnot [long]) -or $artifact.id -ne 12840666559L -or ($artifact.bytes -isnot [int] -and $artifact.bytes -isnot [long]) -or $artifact.bytes -ne 61460337L -or $artifact.sha256 -isnot [string] -or $artifact.sha256 -cne '3984bc9be77515c9993b25b2145e54fdaaeaa0fb62012b645882564435647856'){throw 'Approved CI artifact identity, size or SHA256 differs.'}
- $url=$artifact.url;$uri=$null
- if($url -isnot [string] -or $url.Length -gt 8192 -or $url -match '[\r\n\x00]' -or -not [Uri]::TryCreate($url,[UriKind]::Absolute,[ref]$uri) -or $uri.Scheme -cne 'https' -or $uri.DnsSafeHost -cne 'sdmntprdenmarkeast.oaiusercontent.com' -or $uri.Port -ne 443 -or $uri.UserInfo -or $uri.Fragment -or $uri.AbsolutePath -cnotmatch '\A/files/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/raw\z' -or $url -cnotmatch '\Ahttps://sdmntprdenmarkeast\.oaiusercontent\.com/files/[0-9a-fA-F-]{36}/raw\?' -or $uri.Query.Length -lt 2){throw 'Only the approved HTTPS raw artifact URL host and path are allowed.'}
-}
-function Receive-Player18CIArtifact($Spec,[string]$OutputFile) {
- Assert-Player18ArtifactSpec $Spec
- Add-Type -AssemblyName System.Net.Http
- $handler=[Net.Http.HttpClientHandler]::new();$handler.AllowAutoRedirect=$false;$handler.UseCookies=$false;$handler.UseDefaultCredentials=$false
- $client=[Net.Http.HttpClient]::new($handler);$client.Timeout=[TimeSpan]::FromMinutes(3)
- $response=$null;$input=$null;$output=$null
- try {
-  # Fresh client: no GH token, credentials, cookies or authorization header.
-  $response=$client.GetAsync([Uri]$Spec.artifact.url,[Net.Http.HttpCompletionOption]::ResponseHeadersRead).GetAwaiter().GetResult()
-  if([int]$response.StatusCode -ne 200){throw 'Approved CI artifact download failed or expired; no redirect is followed.'}
-  $length=$response.Content.Headers.ContentLength
-  if($null -ne $length -and $length -ne [long]$Spec.artifact.bytes){throw 'CI artifact HTTP length differs.'}
-  $input=$response.Content.ReadAsStreamAsync().GetAwaiter().GetResult()
-  $output=[IO.File]::Open($OutputFile,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
-  $buffer=New-Object byte[] 524288;$written=0L
-  while(($read=$input.Read($buffer,0,$buffer.Length)) -gt 0){$written+=$read;if($written -gt [long]$Spec.artifact.bytes){throw 'CI artifact download exceeds approved size.'};$output.Write($buffer,0,$read)}
-  if($written -ne [long]$Spec.artifact.bytes){throw 'CI artifact download is incomplete.'}
- }finally{if($output){$output.Dispose()};if($input){$input.Dispose()};if($response){$response.Dispose()};$client.Dispose();$handler.Dispose()}
- if((Get-FileHash -LiteralPath $OutputFile -Algorithm SHA256).Hash.ToLowerInvariant() -cne [string]$Spec.artifact.sha256){throw 'Downloaded CI artifact SHA256 differs.'}
-}
-function Copy-Player18CIArtifactPackage($Spec,[string]$WrapperFile,[string]$OutputFile) {
- Assert-Player18ArtifactSpec $Spec
- $wrapper=Get-Item -LiteralPath $WrapperFile
- if($wrapper.PSIsContainer -or $wrapper.Length -ne [long]$Spec.artifact.bytes -or (Get-FileHash -LiteralPath $WrapperFile -Algorithm SHA256).Hash.ToLowerInvariant() -cne [string]$Spec.artifact.sha256){throw 'Local CI artifact size or SHA256 differs.'}
- Add-Type -AssemblyName System.IO.Compression.FileSystem
- $zip=[IO.Compression.ZipFile]::OpenRead($WrapperFile)
- try {
-  if($zip.Entries.Count -ne 2){throw 'CI artifact must contain only the approved client ZIP and package proof.'}
-  $seen=[Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal);$clientEntry=$null
-  foreach($entry in $zip.Entries){
-   $mode=($entry.ExternalAttributes -shr 16) -band 0xf000
-   if(@('UGSM-Player-0.16.18-Windows-x64.zip','package-verification.json') -cnotcontains $entry.FullName -or -not $seen.Add($entry.FullName) -or ($entry.ExternalAttributes -band 0x10) -ne 0 -or ($mode -ne 0 -and $mode -ne 0x8000)){throw 'Unexpected CI artifact member or file type.'}
-   if($entry.FullName -ceq 'UGSM-Player-0.16.18-Windows-x64.zip'){if($entry.Length -ne [long]$Spec.bytes){throw 'Wrapped client ZIP size differs.'};$clientEntry=$entry}
-   elseif($entry.Length -lt 1 -or $entry.Length -gt 16384){throw 'CI package proof size differs.'}
-  }
-  if(-not $clientEntry){throw 'Approved client ZIP is missing from CI artifact.'}
-  $input=$clientEntry.Open();$output=$null
-  try{
-   $output=[IO.File]::Open($OutputFile,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
-   $buffer=New-Object byte[] 524288;$written=0L
-   while(($read=$input.Read($buffer,0,$buffer.Length)) -gt 0){$written+=$read;if($written -gt [long]$Spec.bytes){throw 'Wrapped client ZIP exceeds approved size.'};$output.Write($buffer,0,$read)}
-   if($written -ne [long]$Spec.bytes){throw 'Wrapped client ZIP is incomplete.'}
-  }finally{if($output){$output.Dispose()};$input.Dispose()}
- }finally{$zip.Dispose()}
- if((Get-Item -LiteralPath $OutputFile).Length -ne [long]$Spec.bytes -or (Get-FileHash -LiteralPath $OutputFile -Algorithm SHA256).Hash.ToLowerInvariant() -cne [string]$Spec.sha256){throw 'Approved client ZIP size or SHA256 differs.'}
-}
 $repo='Priestkiller/UGSM-Player';$version='0.16.18';$tag='v'+$version
 $project=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
+. (Join-Path $PSScriptRoot 'player-release-parts-0.16.18.ps1')
 $spec=Get-Content -LiteralPath (Join-Path $project '.github/player-release-0.16.18.json') -Raw|ConvertFrom-Json
 # Missing pins must fail before any GitHub call or release mutation.
-Assert-Player18ArtifactSpec $spec
+$specNames=@($spec.PSObject.Properties|ForEach-Object{$_.Name})
+$requiredSpecNames=@('version','parts','sha256','bytes','sourceBuild','sourceWorkflow','sourceCommit')
+if($specNames.Count -ne $requiredSpecNames.Count -or @($requiredSpecNames|Where-Object{$specNames -cnotcontains $_}).Count -ne 0 -or $spec.version -isnot [string] -or $spec.version -cne $version -or $spec.sha256 -isnot [string] -or $spec.sourceBuild -isnot [string] -or $spec.sourceCommit -isnot [string] -or ($spec.bytes -isnot [int] -and $spec.bytes -isnot [long])){throw 'PENDING: an exact approved public client release specification is required.'}
+if($spec.bytes -ne 61447931L -or $spec.sha256 -cne '78bd298ae34a0c424d58c676745fdc78696e9cec5f4ba48e91406404dc5480c3'){throw 'The exact approved Player18 ZIP size and SHA256 must match.'}
+Assert-PlayerReleaseParts $spec.parts ([long]$spec.bytes) ([string]$spec.sha256)
+$approvedSourceBuild='d6695e6f33e840ddb75c3acc284a759cbc232dba'
+$approvedSourceWorkflow=40742100776L
+if($approvedSourceWorkflow -lt 1 -or $spec.sourceBuild -cne $approvedSourceBuild -or $spec.sourceCommit -cne $approvedSourceBuild -or ($spec.sourceWorkflow -isnot [int] -and $spec.sourceWorkflow -isnot [long]) -or $spec.sourceWorkflow -ne $approvedSourceWorkflow){throw 'PENDING: the exact approved client CI source and successful workflow run must be pinned first.'}
 if($env:GITHUB_REPOSITORY -cne $repo -or $env:GITHUB_REF -cne 'refs/heads/main' -or $env:GITHUB_SHA -cnotmatch '\A[a-f0-9]{40}\z'){throw 'Wrong public release repository, branch or commit.'}
 if($env:GITHUB_EVENT_NAME -cne 'push' -or -not $env:GITHUB_EVENT_PATH){throw 'An exact public main push release event is required.'}
 $eventFile=Get-Item -LiteralPath $env:GITHUB_EVENT_PATH
@@ -78,10 +28,18 @@ if($repository.full_name -cne $repo -or $repository.private -isnot [bool] -or $r
 $root=Join-Path $env:RUNNER_TEMP ('ugsm-public-player-0.16.18-'+[guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $root|Out-Null
 $name='UGSM-Player-'+$version+'-Windows-x64.zip';$package=Join-Path $root $name
-# One-time read-only CI artifact URL; exact wrapper and inner ZIP pins are fixed.
-$wrapperFile=Join-Path $root 'approved-ci-wrapper.zip'
-Receive-Player18CIArtifact $spec $wrapperFile
-Copy-Player18CIArtifactPackage $spec $wrapperFile $package
+# Each <=15 MiB part is a pinned raw Git blob in this PUBLIC repository. Parts
+# are data slices of the one approved CI ZIP, reconstructed in their given order.
+Join-PlayerReleaseParts $spec.parts $size $sha $package {
+ param($part)
+ $raw=& gh api ('repos/'+$repo+'/git/blobs/'+[string]$part.blob)
+ if($LASTEXITCODE){throw 'Cannot read a pinned public client ZIP part.'}
+ $data=$raw|ConvertFrom-Json
+ if($data.sha -cne [string]$part.blob -or $data.encoding -cne 'base64' -or $data.size -ne [long]$part.bytes -or $data.content -isnot [string]){throw 'Wrong pinned public ZIP part.'}
+ $bytes=[Convert]::FromBase64String($data.content)
+ $raw=$null;$data=$null
+ return ,$bytes
+}
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $allowed=@('UGSM.Player.exe','ugsm-player.exe','UGSM.Player.exe.config','THIRD-PARTY-NOTICES.txt','Anleitung.txt','sha256.json')
 $zip=[IO.Compression.ZipFile]::OpenRead($package)
@@ -109,7 +67,7 @@ if([Diagnostics.FileVersionInfo]::GetVersionInfo($gui).FileVersion -cne '0.16.18
 $sum=Join-Path $root 'SHA256SUMS-0.16.18.txt'
 [IO.File]::WriteAllText($sum,($sha+'  '+$name+[Environment]::NewLine),[Text.UTF8Encoding]::new($false))
 $proof=Join-Path $root 'client-package-verification-0.16.18.json'
-[ordered]@{passed=$true;version=$version;bytes=$size;sha256=$sha;artifact=[ordered]@{id=$spec.artifact.id;bytes=$spec.artifact.bytes;sha256=$spec.artifact.sha256};sourceBuild=$spec.sourceBuild;sourceWorkflow=$spec.sourceWorkflow;sourceCommit=$spec.sourceCommit;zipFiles=6;internalHashesVerified=$true;executableVersionVerified=$true;clientOrGameStarted=$false}|ConvertTo-Json -Depth 5|Set-Content -LiteralPath $proof -Encoding utf8
+[ordered]@{passed=$true;version=$version;bytes=$size;sha256=$sha;parts=$spec.parts;sourceBuild=$spec.sourceBuild;sourceWorkflow=$spec.sourceWorkflow;sourceCommit=$spec.sourceCommit;zipFiles=6;internalHashesVerified=$true;executableVersionVerified=$true;clientOrGameStarted=$false}|ConvertTo-Json -Depth 5|Set-Content -LiteralPath $proof -Encoding utf8
 $files=@($package,$sum,$proof);$expected=@{}
 foreach($file in $files){$item=Get-Item -LiteralPath $file;$expected[$item.Name]=@{size=$item.Length;digest='sha256:'+(Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash.ToLowerInvariant()}}
 function ReadRelease {
