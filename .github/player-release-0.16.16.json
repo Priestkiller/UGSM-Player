@@ -1,0 +1,30 @@
+{
+  "version": "0.16.16",
+  "parts": [
+    {
+      "blob": "ae0e1703138f73b9228f33ef87a77a5ebde0cbb6",
+      "bytes": 15728640,
+      "sha256": "1f3963b833255153837a88fd2368392e6ef1e0a8bf1e2790a3e3b5697bf4bba0"
+    },
+    {
+      "blob": "5d0265ffed03fd4b375c821448ba302355786f92",
+      "bytes": 15728640,
+      "sha256": "2581b8249bd280f1085580a0601c6ddabddfee81cc3b6982cfea264e86599ce6"
+    },
+    {
+      "blob": "d41b2935105872b20d193df72ba481f81560ad4d",
+      "bytes": 15728640,
+      "sha256": "4597c18fde7537de8c3ca6b8e9b879e033739207f132da2dd199f7bb4a9c512b"
+    },
+    {
+      "blob": "53e57f801dc39b009c2baa69037805fcc19d7a23",
+      "bytes": 14261673,
+      "sha256": "9a805a1ec8cc94142f959368381f54c6b70a1cf4055d06ead4ac4cdba0c4897f"
+    }
+  ],
+  "sha256": "9cbd4208b21a688191589b62fc79799fcca8ab0da735eb487159d769b16ed9bb",
+  "bytes": 61447593,
+  "sourceBuild": "489a99c8e5597fff0ca596178a31d5496d3059b2",
+  "sourceWorkflow": 40701097287,
+  "sourceCommit": "489a99c8e5597fff0ca596178a31d5496d3059b2"
+}
