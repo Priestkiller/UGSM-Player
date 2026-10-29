@@ -1,12 +1,16 @@
 # UGSM Spielerclient
 
-Freigegebener Spielerclient: **0.16.20** für **Manager 0.15.37 und Mod Studio 0.4.30**. Das öffentliche ZIP wird unverändert aus dem vollständig geprüften privaten Spielerclient-Build übernommen.
+Freigegebener Spielerclient: **0.16.21** für **Manager 0.15.38 und Mod Studio 0.4.31**. Das öffentliche ZIP wird unverändert aus dem vollständig geprüften privaten Spielerclient-Build übernommen.
+
+Version 0.16.21 unterstützt den neuen Studio-31-Datenstand mit 49 Optionen. Dazu gehören die geprüften Berechnungen für Ausdauerregeneration, Herstellungszahlen und -zeiten, Rucksackplätze und deren Anzeige, Axt-Holzschaden und Gegenstandsstufengrenzen. Für neue Studio-31-Pakete Manager und Spielerclient gemeinsam aktualisieren. Ältere freigegebene Paketformate bleiben unterstützt; ein reines Programmupdate wendet keine neuen Spielwerte an.
+
+Der neue horizontale Faktor für Abladestationen ist im Studio zunächst ausgeschaltet. Faktor 2 ergibt rechnerisch die vierfache Grundfläche der vorhandenen Box. Höhe, Stationsversatz und Spieleraktivierung bleiben unverändert. Die Datenpfade und 17 gezielte Regressionstests wurden geprüft; tatsächliche Ablage, Spielgrenzen und Laufzeitverhalten bleiben im Spiel zu testen. Die Option ist unabhängig von Auto-Loot und der Materialsuche magischer Kisten. Der Materialzugriff aus sämtlichen normalen Kisten und Werkbänken bleibt unbestätigt.
 
 [Letztaktuelle Windows-Version herunterladen](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
 Das vollständige ZIP in einen eigenen beschreibbaren Ordner entpacken und `UGSM.Player.exe` starten. Zum Aktualisieren im Client **Einstellungen → Client-Upgrade → GitHub → Nach Updates suchen** wählen. Profile, Einstellungen, Spiele und Spielordner bleiben erhalten.
 
-Bei der ersten Enshrouded-Synchronisierung wählt der Client automatisch ein beschreibbares Arbeits- und Cacheziel: H:, danach `.ugsm-player/storage` im Spielordner, danach den lokalen Benutzer-Cache. Ein vorhandenes, aber unbeschreibbares H: wird übersprungen. Für diese Korrektur genügt das Clientupdate; Manager 0.15.37 und Studio 0.4.30 bleiben kompatibel.
+Bei der ersten Enshrouded-Synchronisierung wählt der Client automatisch ein beschreibbares Arbeits- und Cacheziel: H:, danach `.ugsm-player/storage` im Spielordner, danach den lokalen Benutzer-Cache. Ein vorhandenes, aber unbeschreibbares H: wird übersprungen. Die automatische Speicherwahl und getrennte Ressourcenvorbereitung bleiben erhalten.
 
 Ab 0.16.20 wird die eigentliche Ressourcenvorbereitung in einem getrennten Arbeitsordner außerhalb der Spielinstallation ausgeführt. Dadurch kann die automatische Speicherwahl den eigenen Unterordner im Spiel verwenden, ohne die Schutzprüfung der Ressourcenwerkzeuge zu verletzen. Vorhandene Sicherungsorte und selbst gewählte Speicherpfade bleiben erhalten.
 
@@ -18,4 +22,4 @@ Für die neue serverbasierte Ressourcenübertragung bereitet der Spielerclient d
 
 Der öffentliche GitHub-Updater prüft Größe, GitHub-SHA256, ZIP-Inventar, innere Dateihashes und Programmversion. Updates vom eigenen Server verwenden zusätzlich die bestehende Herausgebersignatur und die eingeladene Serververbindung. Profile, Betreiberzugänge, ursprüngliche Patcher-Runtime und Spielarchive gehören nicht in dieses öffentliche Repository.
 
-Der Publisher für 0.16.20 übernimmt ausschließlich das unveränderte ZIP aus dem vollständig geprüften privaten Spielerclient-Build. Geordnete öffentliche Git-Blob-Teile enthalten nur die Paketbytes. Quell-Commit, erfolgreicher CI-Lauf, Größen, Teil- und Gesamtprüfsummen sowie ZIP-Inventar, innere Dateihashes und Programmversion werden geprüft. Es werden keine signierten Zugriffslinks oder Zugangsdaten veröffentlicht. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.20` kann veröffentlichen. Der Release bleibt Entwurf, bis alle Dateien hochgeladen und überprüft sind. Frühere Veröffentlichungen bleiben unverändert.
+Der Publisher für 0.16.21 übernimmt ausschließlich das unveränderte ZIP aus dem vollständig geprüften privaten Spielerclient-Build. Geordnete öffentliche Git-Blob-Teile enthalten nur die Paketbytes. Quell-Commit, erfolgreicher CI-Lauf, Größen, Teil- und Gesamtprüfsummen sowie ZIP-Inventar, innere Dateihashes und Programmversion werden geprüft. Es werden keine signierten Zugriffslinks oder Zugangsdaten veröffentlicht. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.21` kann veröffentlichen. Der Release bleibt Entwurf, bis alle Dateien hochgeladen und überprüft sind. Frühere Veröffentlichungen bleiben unverändert.
