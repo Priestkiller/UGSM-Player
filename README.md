@@ -1,12 +1,14 @@
 # UGSM Spielerclient
 
-Freigegebener Spielerclient: **0.16.24** für **Manager 0.15.40 und Mod Studio 0.4.33**. Das öffentliche ZIP wird unverändert aus dem geprüften privaten Spielerclient-Build übernommen; das Setup enthält genau dieses Paket.
+Freigegebener Spielerclient: **0.16.25** für **Manager 0.15.41 und Mod Studio 0.4.33**. Das öffentliche ZIP wird unverändert aus dem geprüften privaten Spielerclient-Build übernommen; das Setup enthält genau dieses Paket.
 
 Beim Start prüft und installiert der Client neue öffentliche Programmversionen. Er zeigt die Änderungen an, lässt das Update verschieben und behält Profile sowie Einstellungen. In den Einstellungen lässt sich die Automatik abschalten. Laufende Spiele und Synchronisierungen werden nicht für ein Programmupdate beendet.
 
+Die Ausdauerregeneration verarbeitet die nativen ganzzahligen Rückgabewerte korrekt. Für die korrigierten Spieldaten das gewünschte Profil im aktuellen Studio 0.4.33 erneut anwenden, den bestätigten Serverstand übernehmen, einen noch laufenden Server neu starten und auf allen Spielerclients erneut synchronisieren. Ein reines Programmupdate ändert bereits installierte Moddaten nicht.
+
 [Letztaktuelle Windows-Version herunterladen](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
-Für eine normale Installation **UGSM-Player-0.16.24-Setup.exe** aus dem Release starten und den Programmordner auswählen. Das Setup legt Startmenüeintrag und Deinstallation für den eigenen Windows-Benutzer an. Alternativ bleibt das vollständig entpackte ZIP nutzbar. Bestehende Serverprofile und Einstellungen werden weiterverwendet. Die manuelle Updateprüfung bleibt unter **Einstellungen → Client-Upgrade** erreichbar.
+Für eine normale Installation **UGSM-Player-0.16.25-Setup.exe** aus dem Release starten und den Programmordner auswählen. Das Setup legt Startmenüeintrag und Deinstallation für den eigenen Windows-Benutzer an. Alternativ bleibt das vollständig entpackte ZIP nutzbar. Bestehende Serverprofile und Einstellungen werden weiterverwendet. Die manuelle Updateprüfung bleibt unter **Einstellungen → Client-Upgrade** erreichbar.
 
 Bei der ersten Enshrouded-Synchronisierung wählt der Client automatisch ein beschreibbares Arbeits- und Cacheziel: H:, danach `.ugsm-player/storage` im Spielordner, danach den lokalen Benutzer-Cache. Ein vorhandenes, aber unbeschreibbares H: wird übersprungen. Die automatische Speicherwahl und getrennte Ressourcenvorbereitung bleiben erhalten.
 
@@ -20,4 +22,4 @@ Für die neue serverbasierte Ressourcenübertragung bereitet der Spielerclient d
 
 Der öffentliche GitHub-Updater prüft Größe, GitHub-SHA256, ZIP-Inventar, innere Dateihashes und Programmversion. Updates vom eigenen Server verwenden zusätzlich die bestehende Herausgebersignatur und die eingeladene Serververbindung. Profile, Betreiberzugänge, ursprüngliche Patcher-Runtime und Spielarchive gehören nicht in dieses öffentliche Repository.
 
-Der Publisher für 0.16.24 übernimmt ausschließlich das unveränderte ZIP aus dem vollständig geprüften privaten Spielerclient-Build. Geordnete öffentliche Git-Blob-Teile enthalten nur die Paketbytes. Quell-Commit, erfolgreicher CI-Lauf, Größen, Teil- und Gesamtprüfsummen sowie ZIP-Inventar, innere Dateihashes und Programmversion werden geprüft. Es werden keine signierten Zugriffslinks oder Zugangsdaten veröffentlicht. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.24` kann veröffentlichen. Der Release bleibt Entwurf, bis alle Dateien hochgeladen und überprüft sind. Frühere Veröffentlichungen bleiben unverändert.
+Der Publisher für 0.16.25 übernimmt ausschließlich das unveränderte ZIP aus dem vollständig geprüften privaten Spielerclient-Build. Geordnete öffentliche Git-Blob-Teile enthalten nur die Paketbytes. Quell-Commit, erfolgreicher CI-Lauf, Größen, Teil- und Gesamtprüfsummen sowie ZIP-Inventar, innere Dateihashes und Programmversion werden geprüft. Es werden keine signierten Zugriffslinks oder Zugangsdaten veröffentlicht. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.25` kann veröffentlichen. Der Release bleibt Entwurf, bis alle Dateien hochgeladen und überprüft sind. Frühere Veröffentlichungen bleiben unverändert.
