@@ -1,12 +1,12 @@
 # UGSM Spielerclient
 
-Freigegebener Spielerclient: **0.16.23** für **Manager 0.15.38 und Mod Studio 0.4.31**. Das öffentliche ZIP wird unverändert aus dem vollständig geprüften privaten Spielerclient-Build übernommen.
+Freigegebener Spielerclient: **0.16.24** für **Manager 0.15.40 und Mod Studio 0.4.33**. Das öffentliche ZIP wird unverändert aus dem geprüften privaten Spielerclient-Build übernommen; das Setup enthält genau dieses Paket.
 
-Version 0.16.23 behebt die Synchronisierung, wenn Steam zuvor gepatchte Archive durch den bekannten Originalstand ersetzt hat. Der Client kann das aktuelle Serverpaket danach erneut anwenden, ohne zuerst den alten Modstand zurückzuspielen. Unbekannte Dateiveränderungen bleiben geschützt. Manager **0.15.38**, Mod Studio **0.4.31** und die bestehenden Ressourcenwerkzeuge bleiben unverändert; für diese Korrektur genügt das Clientupdate.
+Beim Start prüft und installiert der Client neue öffentliche Programmversionen. Er zeigt die Änderungen an, lässt das Update verschieben und behält Profile sowie Einstellungen. In den Einstellungen lässt sich die Automatik abschalten. Laufende Spiele und Synchronisierungen werden nicht für ein Programmupdate beendet.
 
 [Letztaktuelle Windows-Version herunterladen](https://github.com/Priestkiller/UGSM-Player/releases/latest)
 
-Das vollständige ZIP in einen eigenen beschreibbaren Ordner entpacken und `UGSM.Player.exe` starten. Zum Aktualisieren im Client **Einstellungen → Client-Upgrade → GitHub → Nach Updates suchen** wählen. Profile, Einstellungen, Spiele und Spielordner bleiben erhalten.
+Für eine normale Installation **UGSM-Player-0.16.24-Setup.exe** aus dem Release starten und den Programmordner auswählen. Das Setup legt Startmenüeintrag und Deinstallation für den eigenen Windows-Benutzer an. Alternativ bleibt das vollständig entpackte ZIP nutzbar. Bestehende Serverprofile und Einstellungen werden weiterverwendet. Die manuelle Updateprüfung bleibt unter **Einstellungen → Client-Upgrade** erreichbar.
 
 Bei der ersten Enshrouded-Synchronisierung wählt der Client automatisch ein beschreibbares Arbeits- und Cacheziel: H:, danach `.ugsm-player/storage` im Spielordner, danach den lokalen Benutzer-Cache. Ein vorhandenes, aber unbeschreibbares H: wird übersprungen. Die automatische Speicherwahl und getrennte Ressourcenvorbereitung bleiben erhalten.
 
@@ -20,4 +20,4 @@ Für die neue serverbasierte Ressourcenübertragung bereitet der Spielerclient d
 
 Der öffentliche GitHub-Updater prüft Größe, GitHub-SHA256, ZIP-Inventar, innere Dateihashes und Programmversion. Updates vom eigenen Server verwenden zusätzlich die bestehende Herausgebersignatur und die eingeladene Serververbindung. Profile, Betreiberzugänge, ursprüngliche Patcher-Runtime und Spielarchive gehören nicht in dieses öffentliche Repository.
 
-Der Publisher für 0.16.23 übernimmt ausschließlich das unveränderte ZIP aus dem vollständig geprüften privaten Spielerclient-Build. Geordnete öffentliche Git-Blob-Teile enthalten nur die Paketbytes. Quell-Commit, erfolgreicher CI-Lauf, Größen, Teil- und Gesamtprüfsummen sowie ZIP-Inventar, innere Dateihashes und Programmversion werden geprüft. Es werden keine signierten Zugriffslinks oder Zugangsdaten veröffentlicht. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.23` kann veröffentlichen. Der Release bleibt Entwurf, bis alle Dateien hochgeladen und überprüft sind. Frühere Veröffentlichungen bleiben unverändert.
+Der Publisher für 0.16.24 übernimmt ausschließlich das unveränderte ZIP aus dem vollständig geprüften privaten Spielerclient-Build. Geordnete öffentliche Git-Blob-Teile enthalten nur die Paketbytes. Quell-Commit, erfolgreicher CI-Lauf, Größen, Teil- und Gesamtprüfsummen sowie ZIP-Inventar, innere Dateihashes und Programmversion werden geprüft. Es werden keine signierten Zugriffslinks oder Zugangsdaten veröffentlicht. Nur ein Push auf `Priestkiller/UGSM-Player` / `main` mit der exakten Commitnachricht `release: UGSM Player 0.16.24` kann veröffentlichen. Der Release bleibt Entwurf, bis alle Dateien hochgeladen und überprüft sind. Frühere Veröffentlichungen bleiben unverändert.
