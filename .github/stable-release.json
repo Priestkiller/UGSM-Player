@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "app": "player",
+  "repository": "Priestkiller/UGSM-Player",
+  "visibility": "public",
+  "version": "0.16.27",
+  "releaseTag": "v0.16.27",
+  "releaseName": "UGSM Spielerclient 0.16.27",
+  "sourceCommit": "2d45a60334ebddc0ebf01f7d4731085d699e1e0f",
+  "notes": "UGSM Spielerclient 0.16.27\n\nUnterstützung für Mod Studio 0.4.34: sieben anbaubare Nachtpflanzen, eigener Drak-Handwerker und drei ewige Drak-Beschwörungszauber. Reguläres GitHub-Update mit unveränderten Profilen und Spieleinstellungen. Zuerst Manager 0.15.45 aktualisieren, Server neu patchen und im Spielerclient synchronisieren. Native Archivprüfungen bestanden; Spielwirkung noch live prüfen.\n",
+  "assets": [
+    {
+      "name": "UGSM-Player-0.16.27-Windows-x64.zip",
+      "size": 60943754,
+      "sha256": "2c2b176d477d32f08980df851888d4cb1a5fc93679feca21b3398f4dcc6ce5ce",
+      "parts": [
+        {
+          "path": ".github/stable-release-parts/b275c7045529231cea1506c2c830b9354ed67dd6d2d85deeb372d0edb625a221.bin",
+          "size": 8388608,
+          "sha256": "b275c7045529231cea1506c2c830b9354ed67dd6d2d85deeb372d0edb625a221"
+        },
+        {
+          "path": ".github/stable-release-parts/1122cfbc21f1803ce951f6f4f1dc15fec782dd6f44801c74149d7b564ad3e69a.bin",
+          "size": 8388608,
+          "sha256": "1122cfbc21f1803ce951f6f4f1dc15fec782dd6f44801c74149d7b564ad3e69a"
+        },
+        {
+          "path": ".github/stable-release-parts/6dd36fc5c44acf363870b56a8fcecaba6d710eb7272308898cc20775322992e6.bin",
+          "size": 8388608,
+          "sha256": "6dd36fc5c44acf363870b56a8fcecaba6d710eb7272308898cc20775322992e6"
+        },
+        {
+          "path": ".github/stable-release-parts/10461bbfe7ca074f2f9de1e5f7b1ebd53fa44723367259e4e600a11693d34927.bin",
+          "size": 8388608,
+          "sha256": "10461bbfe7ca074f2f9de1e5f7b1ebd53fa44723367259e4e600a11693d34927"
+        },
+        {
+          "path": ".github/stable-release-parts/7d1a6ed27f6ad4dcf8e8a92faa18f8dc07743cfcefa0e5edaf93855b253e3801.bin",
+          "size": 8388608,
+          "sha256": "7d1a6ed27f6ad4dcf8e8a92faa18f8dc07743cfcefa0e5edaf93855b253e3801"
+        },
+        {
+          "path": ".github/stable-release-parts/02ef51673f73cae8fa881c15389bdd3ca63ced56496a7bf7ed4de1a7745bb581.bin",
+          "size": 8388608,
+          "sha256": "02ef51673f73cae8fa881c15389bdd3ca63ced56496a7bf7ed4de1a7745bb581"
+        },
+        {
+          "path": ".github/stable-release-parts/81acc4ca09f3649c2df53a60943bfbca522327790ba052b1fc5b4b6fe4152c56.bin",
+          "size": 8388608,
+          "sha256": "81acc4ca09f3649c2df53a60943bfbca522327790ba052b1fc5b4b6fe4152c56"
+        },
+        {
+          "path": ".github/stable-release-parts/3205a13bc5b38e330b45421ca2eef2e3684f2a5906ac26ee3f7e23ef0677a227.bin",
+          "size": 2223498,
+          "sha256": "3205a13bc5b38e330b45421ca2eef2e3684f2a5906ac26ee3f7e23ef0677a227"
+        }
+      ]
+    },
+    {
+      "name": "UGSM-Player-0.16.27-Setup.exe",
+      "size": 61026816,
+      "sha256": "a91c2a493b73d6700e7c0d3343fb9ac64f280a57a1a0fdfe5e378a1f777fccab",
+      "parts": [
+        {
+          "path": ".github/stable-release-parts/4e82611755350f99bde1084f5109ef66ce0ef25e65347b6a6cfefae0e57ed5e8.bin",
+          "size": 39572,
+          "sha256": "4e82611755350f99bde1084f5109ef66ce0ef25e65347b6a6cfefae0e57ed5e8"
+        },
+        {
+          "path": ".github/stable-release-parts/b275c7045529231cea1506c2c830b9354ed67dd6d2d85deeb372d0edb625a221.bin",
+          "size": 8388608,
+          "sha256": "b275c7045529231cea1506c2c830b9354ed67dd6d2d85deeb372d0edb625a221"
+        },
+        {
+          "path": ".github/stable-release-parts/1122cfbc21f1803ce951f6f4f1dc15fec782dd6f44801c74149d7b564ad3e69a.bin",
+          "size": 8388608,
+          "sha256": "1122cfbc21f1803ce951f6f4f1dc15fec782dd6f44801c74149d7b564ad3e69a"
+        },
+        {
+          "path": ".github/stable-release-parts/6dd36fc5c44acf363870b56a8fcecaba6d710eb7272308898cc20775322992e6.bin",
+          "size": 8388608,
+          "sha256": "6dd36fc5c44acf363870b56a8fcecaba6d710eb7272308898cc20775322992e6"
+        },
+        {
+          "path": ".github/stable-release-parts/10461bbfe7ca074f2f9de1e5f7b1ebd53fa44723367259e4e600a11693d34927.bin",
+          "size": 8388608,
+          "sha256": "10461bbfe7ca074f2f9de1e5f7b1ebd53fa44723367259e4e600a11693d34927"
+        },
+        {
+          "path": ".github/stable-release-parts/7d1a6ed27f6ad4dcf8e8a92faa18f8dc07743cfcefa0e5edaf93855b253e3801.bin",
+          "size": 8388608,
+          "sha256": "7d1a6ed27f6ad4dcf8e8a92faa18f8dc07743cfcefa0e5edaf93855b253e3801"
+        },
+        {
+          "path": ".github/stable-release-parts/02ef51673f73cae8fa881c15389bdd3ca63ced56496a7bf7ed4de1a7745bb581.bin",
+          "size": 8388608,
+          "sha256": "02ef51673f73cae8fa881c15389bdd3ca63ced56496a7bf7ed4de1a7745bb581"
+        },
+        {
+          "path": ".github/stable-release-parts/81acc4ca09f3649c2df53a60943bfbca522327790ba052b1fc5b4b6fe4152c56.bin",
+          "size": 8388608,
+          "sha256": "81acc4ca09f3649c2df53a60943bfbca522327790ba052b1fc5b4b6fe4152c56"
+        },
+        {
+          "path": ".github/stable-release-parts/3205a13bc5b38e330b45421ca2eef2e3684f2a5906ac26ee3f7e23ef0677a227.bin",
+          "size": 2223498,
+          "sha256": "3205a13bc5b38e330b45421ca2eef2e3684f2a5906ac26ee3f7e23ef0677a227"
+        },
+        {
+          "path": ".github/stable-release-parts/b0f5e8bab68b99adc2614ade5238aad6c692e3b5ac86628285e36a241995ff2f.bin",
+          "size": 43490,
+          "sha256": "b0f5e8bab68b99adc2614ade5238aad6c692e3b5ac86628285e36a241995ff2f"
+        }
+      ]
+    },
+    {
+      "name": "RELEASE-NOTES.txt",
+      "size": 403,
+      "sha256": "1f6fe312a52365caf9239b3c58c6855b0401ea29dd69ee657964489c120b5469",
+      "parts": [
+        {
+          "path": ".github/stable-release-parts/1f6fe312a52365caf9239b3c58c6855b0401ea29dd69ee657964489c120b5469.bin",
+          "size": 403,
+          "sha256": "1f6fe312a52365caf9239b3c58c6855b0401ea29dd69ee657964489c120b5469"
+        }
+      ]
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 282,
+      "sha256": "45b4e12cf6986b0920514b36d74c3328cb1bd5c55de527a27b19eee8de1492a2",
+      "parts": [
+        {
+          "path": ".github/stable-release-parts/45b4e12cf6986b0920514b36d74c3328cb1bd5c55de527a27b19eee8de1492a2.bin",
+          "size": 282,
+          "sha256": "45b4e12cf6986b0920514b36d74c3328cb1bd5c55de527a27b19eee8de1492a2"
+        }
+      ]
+    }
+  ]
+}
