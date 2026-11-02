@@ -1,0 +1,8 @@
+UGSM Spielerclient 0.16.28
+
+Passend zu Mod Studio 0.4.35 und Manager 0.15.48.
+Behebt die Gegenprüfung für Nachtpflanzen zusammen mit dem Wurzelpunkte-Faktor.
+Programmupdates werden beim Start geprüft; vor der Installation erscheinen die Änderungen.
+Nach dem Serverpatch unter Mods & Synchronisation zuerst Synchronisieren,
+danach separat Spiel starten. Profile und Spiele bleiben erhalten.
+Hintergrundprüfungen und native Archivprüfungen bestanden; kein Spielstart im Test.
