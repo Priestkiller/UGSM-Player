@@ -6,7 +6,7 @@
   "version": "0.16.30",
   "releaseTag": "v0.16.30",
   "releaseName": "UGSM Spielerclient 0.16.30",
-  "sourceCommit": "fe08218eee00f60ee3b3c8f572b4f94c79aa6745",
+  "sourceCommit": "944bde28a9be2a0e02fc450b15ae2e8f67ae8947",
   "notes": "UGSM Spielerclient 0.16.30\n\n- Unterstützt Enshrouded1.0.1.0 / Build1283531 mit passenden neuen Begleiter-, Drak-, Nachtpflanzen- und Menüverträgen.\n- Die neue lokale Ressourcenaufbereitung wird ausschließlich für den geprüften Studio-0.4.36-Enginestand gewählt. Frühere Studio-Pakete verwenden weiterhin ihre bisherigen unveränderten Prüfdaten und Laufzeit.\n- Änderungen aus dem Serverprofil werden nach erfolgreicher Prüfung auf die passende lokale Spielversion angewendet. Unterschiedliche Spielversionen werden ausdrücklich gemeldet.\n- Profile, Spielinstallationen und Einstellungen bleiben erhalten. Dateiprüfungen bestätigen keine Spielwirkung.\n",
   "assets": [
     {
