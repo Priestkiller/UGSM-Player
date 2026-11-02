@@ -1,6 +1,7 @@
-UGSM Spielerclient 0.16.30
+UGSM Spielerclient 0.16.31
 
-- Unterstützt Enshrouded1.0.1.0 / Build1283531 mit passenden neuen Begleiter-, Drak-, Nachtpflanzen- und Menüverträgen.
-- Die neue lokale Ressourcenaufbereitung wird ausschließlich für den geprüften Studio-0.4.36-Enginestand gewählt. Frühere Studio-Pakete verwenden weiterhin ihre bisherigen unveränderten Prüfdaten und Laufzeit.
-- Änderungen aus dem Serverprofil werden nach erfolgreicher Prüfung auf die passende lokale Spielversion angewendet. Unterschiedliche Spielversionen werden ausdrücklich gemeldet.
-- Profile, Spielinstallationen und Einstellungen bleiben erhalten. Dateiprüfungen bestätigen keine Spielwirkung.
+Ergänzt die elf fehlenden Drak- und Nachtpflanzen-Texturressourcen im lokalen Spielclient. Verhindert damit die nachgewiesene fehlende Textur beim Drak-Handwerker im Beschwörungsstab.
+
+Synchronisieren erstellt betroffene Pakete auch bei unveränderter Serverrevision erneut aus der gesicherten Originalbasis. Alte Profile und Wiederherstellungsdaten bleiben lesbar. Unterstützt die geprüften Studio-Stände 0.4.36 und 0.4.37 auf Spielbuild 1283531.
+
+Nach dem Update das Spiel schließen und erneut Synchronisieren wählen. Datenprüfung ersetzt keinen Spieltest.
