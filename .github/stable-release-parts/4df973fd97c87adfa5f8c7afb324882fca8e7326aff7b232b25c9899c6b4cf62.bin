@@ -1,0 +1,6 @@
+UGSM Spielerclient 0.16.29
+
+- Korrigiert die Ressourcenprüfung für eigene Begleiterzauber, wenn zugleich Manakosten oder Zauberzeiten geändert sind. Zuvor konnte ein korrektes Studio-0.4.35-Paket mit „nicht freigegebene oder optionswidrige Studio34-Erstellung“ abgelehnt werden.
+- Die Prüfung erlaubt nur die exakt aus den gewählten Optionen berechneten Felder. Fremde Gegenstände und abweichende Änderungen bleiben gesperrt.
+- Bestehende Serverpakete können nach dem Clientupdate erneut synchronisiert werden; hierfür ist kein neuer Studio-Patch erforderlich.
+- Ergänzt kombinierte Produzenten-/Verbraucherprüfungen vor neuen Veröffentlichungen. Diese prüfen Dateien und Übergabe, keine Spielwirkung.
