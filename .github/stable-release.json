@@ -6,7 +6,7 @@
   "version": "0.16.31",
   "releaseTag": "v0.16.31",
   "releaseName": "UGSM Spielerclient 0.16.31",
-  "sourceCommit": "e556e120b598bb363ee7db32389c83ccdb5a2ab7",
+  "sourceCommit": "f50e720e34e810d6c164e2c0cac0144540e64286",
   "notes": "UGSM Spielerclient 0.16.31\n\nErgänzt die elf fehlenden Drak- und Nachtpflanzen-Texturressourcen im lokalen Spielclient. Verhindert damit die nachgewiesene fehlende Textur beim Drak-Handwerker im Beschwörungsstab.\n\nSynchronisieren erstellt betroffene Pakete auch bei unveränderter Serverrevision erneut aus der gesicherten Originalbasis. Alte Profile und Wiederherstellungsdaten bleiben lesbar. Unterstützt die geprüften Studio-Stände 0.4.36 und 0.4.37 auf Spielbuild 1283531.\n\nNach dem Update das Spiel schließen und erneut Synchronisieren wählen. Datenprüfung ersetzt keinen Spieltest.\n",
   "assets": [
     {
