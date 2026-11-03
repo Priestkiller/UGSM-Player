@@ -1,7 +1,7 @@
-UGSM Spielerclient 0.16.32
+UGSM Spielerclient 0.16.33
 
-Unterstützt die vier eigenen Draki-Bilder und Ssarikks Gespräche aus Studio 0.4.38. Bestehende freigegebene Studio-0.4.36/0.4.37-Pakete verwenden weiterhin ihre ursprüngliche Datenprüfung und die passende Client-Verarbeitung.
+Unterstützt Mod Studio 0.4.39: Nach kleinen Enshrouded-Updates werden die tatsächlich verwendeten Datenstrukturen und Quellvorlagen geprüft. Passen sie weiterhin zum festen Kompatibilitätsprofil, ist dafür kein neues Studio-Update erforderlich.
 
-Nach dem Update das Spiel schließen und Synchronisieren vollständig abschließen. Für die neuen Gespräche muss der Server auf Studio 0.4.38 gepatcht und neu gestartet sein. Profile und Wiederherstellungsdaten bleiben erhalten. Spielwirkung separat prüfen.
+Server und Spielclient müssen denselben Spielbuild verwenden. Inkompatible Strukturen bleiben gesperrt; ältere Studio-Pakete behalten ihre ursprüngliche Verarbeitung. Profile und Wiederherstellungsdaten bleiben erhalten. Nach dem Serverpatch bei geschlossenem Spiel synchronisieren.
 
-Einmaliger Umstieg von Spielerclient 0.16.31 oder älter: Die Setup.exe dieses Releases verwenden. Der bisherige Updater begrenzt einzelne Dateien auf 100 MiB und kann den gewachsenen Client nicht selbst übernehmen. Profile und Einstellungen werden vom Setup erhalten. Ab 0.16.32 ist diese Größenbegrenzung auf 128 MiB angeglichen; die übrigen Datei-, Prüfsummen- und Signaturprüfungen bleiben bestehen.
+Für Spielerclient 0.16.31 oder älter einmalig die Setup.exe dieses Releases verwenden.

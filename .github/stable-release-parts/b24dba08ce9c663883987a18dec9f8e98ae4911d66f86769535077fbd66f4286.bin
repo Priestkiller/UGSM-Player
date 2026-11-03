@@ -1,0 +1,7 @@
+UGSM Spielerclient 0.16.33
+
+Unterstützt Mod Studio 0.4.39: Nach kleinen Enshrouded-Updates werden die tatsächlich verwendeten Datenstrukturen und Quellvorlagen geprüft. Passen sie weiterhin zum festen Kompatibilitätsprofil, ist dafür kein neues Studio-Update erforderlich.
+
+Server und Spielclient müssen denselben Spielbuild verwenden. Inkompatible Strukturen bleiben gesperrt; ältere Studio-Pakete behalten ihre ursprüngliche Verarbeitung. Profile und Wiederherstellungsdaten bleiben erhalten. Nach dem Serverpatch bei geschlossenem Spiel synchronisieren.
+
+Für Spielerclient 0.16.31 oder älter einmalig die Setup.exe dieses Releases verwenden.
